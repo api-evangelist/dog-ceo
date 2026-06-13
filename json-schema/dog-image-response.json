@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/dog-ceo/main/json-schema/dog-image-response.json",
+  "title": "Dog CEO API Image Response",
+  "description": "Schema for a single dog image response from the Dog CEO API",
+  "type": "object",
+  "required": ["message", "status"],
+  "properties": {
+    "message": {
+      "type": "string",
+      "format": "uri",
+      "description": "CDN URL of the dog image",
+      "pattern": "^https://images\\.dog\\.ceo/breeds/",
+      "examples": [
+        "https://images.dog.ceo/breeds/terrier-silky/n02097658_2882.jpg",
+        "https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["success", "error"],
+      "description": "Status of the API response"
+    }
+  },
+  "additionalProperties": false
+}

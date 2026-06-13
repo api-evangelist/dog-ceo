@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/dog-ceo/main/json-schema/dog-images-list-response.json",
+  "title": "Dog CEO API Multiple Images Response",
+  "description": "Schema for a multiple dog images response from the Dog CEO API",
+  "type": "object",
+  "required": ["message", "status"],
+  "properties": {
+    "message": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri",
+        "pattern": "^https://images\\.dog\\.ceo/breeds/"
+      },
+      "description": "Array of CDN URLs for dog images",
+      "minItems": 1,
+      "maxItems": 50,
+      "examples": [
+        [
+          "https://images.dog.ceo/breeds/retriever-chesapeake/n02099849_1068.jpg",
+          "https://images.dog.ceo/breeds/vizsla/n02100583_1214.jpg",
+          "https://images.dog.ceo/breeds/waterdog-spanish/20180723_185544.jpg"
+        ]
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["success", "error"],
+      "description": "Status of the API response"
+    }
+  },
+  "additionalProperties": false
+}

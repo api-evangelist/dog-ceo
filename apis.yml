@@ -43,7 +43,7 @@ apis:
       - type: Documentation
         url: https://dog.ceo/dog-api/documentation/
       - type: OpenAPI
-        url: https://raw.githubusercontent.com/ElliottLandsborough/dog-ceo-api/master/openapi.yaml
+        url: https://raw.githubusercontent.com/api-evangelist/dog-ceo/refs/heads/main/openapi/dog-ceo-openapi.yml
 common:
   - type: Website
     url: https://dog.ceo/dog-api/

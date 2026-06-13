@@ -1,0 +1,45 @@
+vocabulary:
+  - term: breed
+    definition: >
+      A recognized group of dogs sharing common characteristics and ancestry.
+      The Dog CEO API supports 120+ breeds identified by lowercase hyphenated
+      names (e.g., "hound", "retriever", "terrier"). Breed names are used as
+      path parameters in API endpoints.
+
+  - term: sub-breed
+    definition: >
+      A subdivision within a breed that shares a common lineage but has distinct
+      characteristics. For example, "hound" has sub-breeds including "afghan",
+      "basset", "blood", "english", "ibizan", "plott", and "walker". Sub-breed
+      names are lowercase and used as path parameters after the breed parameter.
+
+  - term: image URL
+    definition: >
+      A CDN-hosted URL pointing to a dog photograph. All image URLs follow the
+      pattern: https://images.dog.ceo/breeds/{breed-subbreed}/{filename}.jpg
+      Images are served via the Vultr CDN for fast global delivery.
+
+  - term: random
+    definition: >
+      An API operation that returns a pseudo-randomly selected image from the
+      available dataset. Randomness may be seeded server-side. The API supports
+      single random images and multiple random images (up to 50 per request).
+
+  - term: status
+    definition: >
+      A field present in all API responses indicating whether the request
+      succeeded. Value is "success" for successful requests and "error" for
+      failed requests. Error responses include a descriptive message field.
+
+  - term: Stanford Dogs Dataset
+    definition: >
+      A publicly available image dataset containing 120 dog breeds with over
+      20,000 images, originally compiled at Stanford University. The Dog CEO
+      API is backed by this dataset supplemented with community-contributed
+      photos.
+
+  - term: count
+    definition: >
+      An integer path parameter used in random image endpoints to specify how
+      many images to return. Minimum value is 1, maximum value is 50. Used in
+      endpoints like /breeds/image/random/{count}.

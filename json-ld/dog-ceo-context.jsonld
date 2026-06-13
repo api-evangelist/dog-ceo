@@ -1,0 +1,60 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "dog-ceo": "https://dog.ceo/dog-api/vocabulary#",
+    "breed": {
+      "@id": "dog-ceo:breed",
+      "@type": "@id"
+    },
+    "subBreed": {
+      "@id": "dog-ceo:subBreed"
+    },
+    "imageUrl": {
+      "@id": "schema:contentUrl",
+      "@type": "@id"
+    },
+    "status": {
+      "@id": "dog-ceo:status"
+    },
+    "message": {
+      "@id": "dog-ceo:message"
+    },
+    "ImageObject": "schema:ImageObject",
+    "Animal": "schema:Animal",
+    "url": "schema:url",
+    "name": "schema:name",
+    "description": "schema:description"
+  },
+  "@type": "WebAPI",
+  "name": "Dog CEO API",
+  "description": "Free REST API providing random dog images organized by breed and sub-breed from 120+ breeds",
+  "url": "https://dog.ceo/dog-api/",
+  "documentation": "https://dog.ceo/dog-api/documentation/",
+  "license": "https://github.com/ElliottLandsborough/dog-ceo-api/blob/main/LICENSE",
+  "provider": {
+    "@type": "Person",
+    "name": "Elliott Landsborough",
+    "url": "https://github.com/ElliottLandsborough"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "description": "Free to use, no authentication required"
+  },
+  "mainEntity": {
+    "@type": "DataFeed",
+    "name": "Dog Image Dataset",
+    "description": "20,000+ dog images across 120+ breeds, based on the Stanford Dogs Dataset",
+    "about": {
+      "@type": "Animal",
+      "name": "Dog",
+      "alternateName": "Canis lupus familiaris"
+    },
+    "dataFeedElement": {
+      "@type": "ImageObject",
+      "description": "CDN-hosted dog photograph",
+      "url": "https://images.dog.ceo/breeds/"
+    }
+  }
+}
