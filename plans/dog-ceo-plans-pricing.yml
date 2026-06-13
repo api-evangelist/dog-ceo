@@ -1,0 +1,29 @@
+name: Dog CEO Plans and Pricing
+description: Dog CEO API is a completely free, open-source service with no paid tiers or API keys required.
+url: https://dog.ceo/dog-api/
+plans:
+  - name: Free
+    description: Full access to all Dog CEO API endpoints at no cost. The service is community-supported and accepts voluntary donations.
+    price: 0
+    currency: USD
+    unit: month
+    features:
+      - Random dog images from 120+ breeds
+      - All breed and sub-breed listings
+      - Up to 50 images per request
+      - JSON response format
+      - No API key required
+      - No authentication required
+      - Community-contributed image database
+      - Open-source codebase
+    limits:
+      requests: unlimited
+      images_per_request: 50
+donations:
+  accepted: true
+  url: https://paypal.me/dogapi
+  description: Optional PayPal donations accepted to help cover hosting costs ("buy us some dog treats")
+notes: >
+  Dog CEO API is a free, open-source REST API with no commercial pricing tiers.
+  Hosting is funded by voluntary donations from the community. The project is
+  maintained on GitHub under the MIT license.

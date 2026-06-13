@@ -1,0 +1,29 @@
+name: Dog CEO Rate Limits
+description: Dog CEO API does not publish formal rate limits. The service is free and open, but requests per batch are capped at 50 images.
+url: https://dog.ceo/dog-api/documentation/
+limits:
+  - name: Images Per Request
+    description: Maximum number of dog images returned in a single multi-image request. Requests exceeding this are silently capped.
+    value: 50
+    unit: images
+    scope: per-request
+    enforced: true
+  - name: Request Rate
+    description: No documented request rate limit. The API is publicly accessible without throttling controls, though fair use is expected.
+    value: null
+    unit: requests/second
+    scope: global
+    enforced: false
+    notes: No official rate limit published; excessive automated traffic may be blocked at the infrastructure level.
+authentication:
+  required: false
+  types: []
+  notes: No API key or OAuth token required. All endpoints are publicly accessible.
+uptime:
+  claimed: "99.999%"
+  cdn: Vultr CDN
+  source: https://dog.ceo/dog-api/about
+notes: >
+  Dog CEO API is a free public API without formal rate-limiting documentation.
+  The only hard limit is 50 images per batch request. Developers are encouraged
+  to be considerate of the free service and contribute via donations.

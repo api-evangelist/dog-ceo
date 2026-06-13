@@ -1,0 +1,72 @@
+aid: dog-ceo
+name: Dog CEO
+description: >
+  Free REST API providing random dog images organized by breed and sub-breed
+  from 120+ breeds. Backed by the Stanford Dogs Dataset and community-contributed
+  photos, Dog CEO is widely used for learning HTTP concepts, API integration
+  practice, and building dog-related applications. No authentication or API key
+  is required. All endpoints return JSON with image URLs served via Vultr CDN.
+  Open-source under the MIT license and community-funded via voluntary donations.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/dog-ceo/refs/heads/main/apis.yml
+created: "2026-06-13"
+modified: "2026-06-13"
+specificationVersion: "0.19"
+type: Index
+tags:
+  - Dogs
+  - Images
+  - Animals
+  - Open Source
+  - Free API
+  - Machine Learning
+  - Education
+apis:
+  - aid: dog-ceo:dog-ceo-api
+    name: Dog CEO API
+    description: >
+      REST API for retrieving random and breed-specific dog images from a
+      database of 20,000+ photos spanning 120+ breeds and sub-breeds. Supports
+      random image selection, full breed listings, breed-specific image queries,
+      and sub-breed queries. Returns JSON with CDN-hosted image URLs.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://dog.ceo/api
+    humanURL: https://dog.ceo/dog-api/
+    type: REST
+    tags:
+      - Dogs
+      - Images
+      - Breeds
+      - Animals
+      - Open Source
+    properties:
+      - type: Documentation
+        url: https://dog.ceo/dog-api/documentation/
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/ElliottLandsborough/dog-ceo-api/master/openapi.yaml
+common:
+  - type: Website
+    url: https://dog.ceo/dog-api/
+  - type: Documentation
+    url: https://dog.ceo/dog-api/documentation/
+  - type: GitHubOrg
+    url: https://github.com/ElliottLandsborough
+  - type: GitHubRepo
+    url: https://github.com/ElliottLandsborough/dog-ceo-api
+  - type: GitHubRepo
+    url: https://github.com/jigsawpieces/dog-api-images
+  - type: Blog
+    url: https://dog.ceo/dog-api/about
+  - type: Pricing
+    url: https://dog.ceo/dog-api/about
+  - type: X
+    url: https://x.com/dog__CEO
+  - type: Plans
+    url: plans/dog-ceo-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/dog-ceo-rate-limits.yml
+  - type: FinOps
+    url: finops/dog-ceo-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

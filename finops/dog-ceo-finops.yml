@@ -1,0 +1,37 @@
+name: Dog CEO FinOps
+description: Financial operations guidance for consuming the Dog CEO API. The API is entirely free with no metered billing or cost management required.
+url: https://dog.ceo/dog-api/
+cost_model:
+  type: free
+  metered: false
+  billing: none
+  currency: USD
+cost_factors:
+  - name: API Requests
+    cost: 0
+    unit: per request
+    notes: All API requests are free with no per-call charges.
+  - name: Image Retrieval
+    cost: 0
+    unit: per image
+    notes: Images served via Vultr CDN at no cost to the consumer.
+optimization:
+  - tip: Cache responses locally to reduce redundant API calls, especially for breed listings that change infrequently.
+  - tip: Use batch image endpoints (up to 50 images) to reduce total request count when multiple images are needed.
+  - tip: Store breed list locally after first fetch as it rarely changes.
+  - tip: Use the /breeds/list/all endpoint once at startup rather than repeated individual breed queries.
+consumer_costs:
+  - name: Egress / Bandwidth
+    description: Consumers downloading images from the Vultr CDN may incur bandwidth costs on their own infrastructure (e.g., cloud egress fees) if processing or re-hosting images.
+    cost: variable
+    notes: Not a Dog CEO charge — this is a cost borne by the consuming application's cloud provider.
+voluntary_support:
+  url: https://paypal.me/dogapi
+  description: >
+    Dog CEO API is donation-funded. Consider contributing to sustain the free
+    service if your application relies on it in production.
+notes: >
+  Dog CEO API has zero direct cost to consumers. FinOps considerations are
+  limited to downstream infrastructure costs (bandwidth, storage) if the
+  consumer re-hosts or processes images. No API budget, quota alerts, or
+  billing integrations are applicable.
