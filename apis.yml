@@ -7,7 +7,7 @@ description: >
   practice, and building dog-related applications. No authentication or API key
   is required. All endpoints return JSON with image URLs served via Vultr CDN.
   Open-source under the MIT license and community-funded via voluntary donations.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/dog-ceo/refs/heads/main/apis.yml
 created: "2026-06-13"
 modified: "2026-06-13"
@@ -29,7 +29,7 @@ apis:
       database of 20,000+ photos spanning 120+ breeds and sub-breeds. Supports
       random image selection, full breed listings, breed-specific image queries,
       and sub-breed queries. Returns JSON with CDN-hosted image URLs.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://dog.ceo/api
     humanURL: https://dog.ceo/dog-api/
     type: REST
