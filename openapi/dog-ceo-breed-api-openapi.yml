@@ -1,0 +1,170 @@
+openapi: 3.0.3
+info:
+  title: Dog CEO Breed API
+  description: 'Free REST API providing random dog images organized by breed and sub-breed from 120+ breeds. Backed by the Stanford Dogs Dataset and community-contributed photos. No authentication or API key required. All endpoints return JSON with image URLs served via CDN. Open-source under the MIT license.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Dog CEO API
+    url: https://dog.ceo/dog-api/
+  license:
+    name: MIT
+    url: https://github.com/ElliottLandsborough/dog-ceo-api/blob/main/LICENSE
+servers:
+- url: https://dog.ceo/api
+  description: Production server
+security: []
+tags:
+- name: Breed
+  description: Operations for fetching images from a specific breed
+paths:
+  /breed/{breed}/images:
+    get:
+      operationId: getBreedImages
+      summary: All images by breed
+      description: Returns an array of all image URLs for a specific breed.
+      tags:
+      - Breed
+      parameters:
+      - $ref: '#/components/parameters/breed'
+      responses:
+        '200':
+          description: Successful response with all breed images
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MultipleImagesResponse'
+              example:
+                message:
+                - https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg
+                - https://images.dog.ceo/breeds/hound-afghan/n02088094_1007.jpg
+                status: success
+        '404':
+          description: Breed not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /breed/{breed}/images/random:
+    get:
+      operationId: getBreedRandomImage
+      summary: Random image from a breed
+      description: Returns a single random dog image from a specific breed.
+      tags:
+      - Breed
+      parameters:
+      - $ref: '#/components/parameters/breed'
+      responses:
+        '200':
+          description: Successful response with a random breed image URL
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SingleImageResponse'
+              example:
+                message: https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg
+                status: success
+        '404':
+          description: Breed not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /breed/{breed}/images/random/{count}:
+    get:
+      operationId: getBreedRandomImages
+      summary: Multiple random images from a breed
+      description: 'Returns multiple random dog images from a specific breed. Maximum count is 50.
+
+        '
+      tags:
+      - Breed
+      parameters:
+      - $ref: '#/components/parameters/breed'
+      - name: count
+        in: path
+        required: true
+        description: Number of images to return (max 50)
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 50
+          example: 3
+      responses:
+        '200':
+          description: Successful response with multiple random breed images
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MultipleImagesResponse'
+        '404':
+          description: Breed not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  parameters:
+    breed:
+      name: breed
+      in: path
+      required: true
+      description: 'The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.
+
+        '
+      schema:
+        type: string
+        example: hound
+  schemas:
+    ErrorResponse:
+      type: object
+      required:
+      - message
+      - status
+      properties:
+        message:
+          type: string
+          description: Error message describing what went wrong
+          example: Breed not found (master breed does not exist)
+        status:
+          type: string
+          enum:
+          - error
+          example: error
+    MultipleImagesResponse:
+      type: object
+      required:
+      - message
+      - status
+      properties:
+        message:
+          type: array
+          items:
+            type: string
+            format: uri
+          description: Array of dog image URLs
+          example:
+          - https://images.dog.ceo/breeds/retriever-chesapeake/n02099849_1068.jpg
+          - https://images.dog.ceo/breeds/vizsla/n02100583_1214.jpg
+        status:
+          $ref: '#/components/schemas/ApiStatus'
+    ApiStatus:
+      type: string
+      enum:
+      - success
+      - error
+      description: Indicates whether the API call was successful or encountered an error
+    SingleImageResponse:
+      type: object
+      required:
+      - message
+      - status
+      properties:
+        message:
+          type: string
+          format: uri
+          description: URL of the dog image
+          example: https://images.dog.ceo/breeds/terrier-silky/n02097658_2882.jpg
+        status:
+          $ref: '#/components/schemas/ApiStatus'

@@ -1,0 +1,108 @@
+openapi: 3.0.3
+info:
+  title: Dog CEO Breed Random API
+  description: 'Free REST API providing random dog images organized by breed and sub-breed from 120+ breeds. Backed by the Stanford Dogs Dataset and community-contributed photos. No authentication or API key required. All endpoints return JSON with image URLs served via CDN. Open-source under the MIT license.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Dog CEO API
+    url: https://dog.ceo/dog-api/
+  license:
+    name: MIT
+    url: https://github.com/ElliottLandsborough/dog-ceo-api/blob/main/LICENSE
+servers:
+- url: https://dog.ceo/api
+  description: Production server
+security: []
+tags:
+- name: Random
+  description: Operations for fetching random dog images across all breeds
+paths:
+  /breeds/image/random:
+    get:
+      operationId: getRandomImage
+      summary: Random image from all breeds
+      description: Returns a single random dog image from any breed.
+      tags:
+      - Random
+      responses:
+        '200':
+          description: Successful response with a random image URL
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SingleImageResponse'
+              example:
+                message: https://images.dog.ceo/breeds/terrier-silky/n02097658_2882.jpg
+                status: success
+  /breeds/image/random/{count}:
+    get:
+      operationId: getRandomImages
+      summary: Multiple random images from all breeds
+      description: 'Returns multiple random dog images from any breed. Maximum count is 50.
+
+        '
+      tags:
+      - Random
+      parameters:
+      - name: count
+        in: path
+        required: true
+        description: Number of images to return (max 50)
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 50
+          example: 3
+      responses:
+        '200':
+          description: Successful response with multiple random image URLs
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MultipleImagesResponse'
+              example:
+                message:
+                - https://images.dog.ceo/breeds/retriever-chesapeake/n02099849_1068.jpg
+                - https://images.dog.ceo/breeds/vizsla/n02100583_1214.jpg
+                - https://images.dog.ceo/breeds/waterdog-spanish/20180723_185544.jpg
+                status: success
+components:
+  schemas:
+    MultipleImagesResponse:
+      type: object
+      required:
+      - message
+      - status
+      properties:
+        message:
+          type: array
+          items:
+            type: string
+            format: uri
+          description: Array of dog image URLs
+          example:
+          - https://images.dog.ceo/breeds/retriever-chesapeake/n02099849_1068.jpg
+          - https://images.dog.ceo/breeds/vizsla/n02100583_1214.jpg
+        status:
+          $ref: '#/components/schemas/ApiStatus'
+    SingleImageResponse:
+      type: object
+      required:
+      - message
+      - status
+      properties:
+        message:
+          type: string
+          format: uri
+          description: URL of the dog image
+          example: https://images.dog.ceo/breeds/terrier-silky/n02097658_2882.jpg
+        status:
+          $ref: '#/components/schemas/ApiStatus'
+    ApiStatus:
+      type: string
+      enum:
+      - success
+      - error
+      description: Indicates whether the API call was successful or encountered an error

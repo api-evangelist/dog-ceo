@@ -1,0 +1,81 @@
+openapi: 3.0.3
+info:
+  title: Dog CEO Breed Breeds API
+  description: 'Free REST API providing random dog images organized by breed and sub-breed from 120+ breeds. Backed by the Stanford Dogs Dataset and community-contributed photos. No authentication or API key required. All endpoints return JSON with image URLs served via CDN. Open-source under the MIT license.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Dog CEO API
+    url: https://dog.ceo/dog-api/
+  license:
+    name: MIT
+    url: https://github.com/ElliottLandsborough/dog-ceo-api/blob/main/LICENSE
+servers:
+- url: https://dog.ceo/api
+  description: Production server
+security: []
+tags:
+- name: Breeds
+  description: Operations for listing all available dog breeds
+paths:
+  /breeds/list/all:
+    get:
+      operationId: listAllBreeds
+      summary: List all breeds
+      description: 'Returns a map of all dog breeds and their sub-breeds. The key is the breed name and the value is an array of sub-breed names (empty array if no sub-breeds exist).
+
+        '
+      tags:
+      - Breeds
+      responses:
+        '200':
+          description: Successful response with all breeds
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BreedsListResponse'
+              example:
+                message:
+                  hound:
+                  - afghan
+                  - basset
+                  - blood
+                  - english
+                  retriever:
+                  - golden
+                  - curly
+                  terrier: []
+                status: success
+components:
+  schemas:
+    BreedsListResponse:
+      type: object
+      required:
+      - message
+      - status
+      properties:
+        message:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              type: string
+          description: 'Map of breed names to arrays of sub-breed names. Empty array indicates no sub-breeds.
+
+            '
+          example:
+            hound:
+            - afghan
+            - basset
+            retriever:
+            - golden
+            terrier: []
+        status:
+          $ref: '#/components/schemas/ApiStatus'
+    ApiStatus:
+      type: string
+      enum:
+      - success
+      - error
+      description: Indicates whether the API call was successful or encountered an error
