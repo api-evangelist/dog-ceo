@@ -7,7 +7,19 @@ description: >
   practice, and building dog-related applications. No authentication or API key
   is required. All endpoints return JSON with image URLs served via Vultr CDN.
   Open-source under the MIT license and community-funded via voluntary donations.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: free
+  onboarding: open
+  trial: false
+  try_now: true
+  public: true
+  label: Free · Open access
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/dog-ceo.png
 url: https://raw.githubusercontent.com/api-evangelist/dog-ceo/refs/heads/main/apis.yml
 created: "2026-06-13"
 modified: "2026-06-13"
@@ -22,28 +34,54 @@ tags:
   - Machine Learning
   - Education
 apis:
-  - aid: dog-ceo:dog-ceo-api
-    name: Dog CEO API
-    description: >
-      REST API for retrieving random and breed-specific dog images from a
-      database of 20,000+ photos spanning 120+ breeds and sub-breeds. Supports
-      random image selection, full breed listings, breed-specific image queries,
-      and sub-breed queries. Returns JSON with CDN-hosted image URLs.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    baseURL: https://dog.ceo/api
-    humanURL: https://dog.ceo/dog-api/
-    type: REST
-    tags:
-      - Dogs
-      - Images
-      - Breeds
-      - Animals
-      - Open Source
-    properties:
-      - type: Documentation
-        url: https://dog.ceo/dog-api/documentation/
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/dog-ceo/refs/heads/main/openapi/dog-ceo-openapi.yml
+- aid: dog-ceo:dog-ceo-breed-api
+  name: Dog CEO Breed API
+  description: Operations for fetching images from a specific breed
+  humanURL: https://dog.ceo/dog-api/
+  baseURL: https://dog.ceo/api
+  tags:
+  - Breed
+  properties:
+  - type: OpenAPI
+    url: openapi/dog-ceo-breed-api-openapi.yml
+  - type: Documentation
+    url: https://dog.ceo/dog-api/documentation/
+- aid: dog-ceo:dog-ceo-breeds-api
+  name: Dog CEO Breeds API
+  description: Operations for listing all available dog breeds
+  humanURL: https://dog.ceo/dog-api/
+  baseURL: https://dog.ceo/api
+  tags:
+  - Breeds
+  properties:
+  - type: OpenAPI
+    url: openapi/dog-ceo-breeds-api-openapi.yml
+  - type: Documentation
+    url: https://dog.ceo/dog-api/documentation/
+- aid: dog-ceo:dog-ceo-random-api
+  name: Dog CEO Random API
+  description: Operations for fetching random dog images across all breeds
+  humanURL: https://dog.ceo/dog-api/
+  baseURL: https://dog.ceo/api
+  tags:
+  - Random
+  properties:
+  - type: OpenAPI
+    url: openapi/dog-ceo-random-api-openapi.yml
+  - type: Documentation
+    url: https://dog.ceo/dog-api/documentation/
+- aid: dog-ceo:dog-ceo-sub-breed-api
+  name: Dog CEO Sub-Breed API
+  description: Operations for fetching images from a specific sub-breed
+  humanURL: https://dog.ceo/dog-api/
+  baseURL: https://dog.ceo/api
+  tags:
+  - Sub-Breed
+  properties:
+  - type: OpenAPI
+    url: openapi/dog-ceo-sub-breed-api-openapi.yml
+  - type: Documentation
+    url: https://dog.ceo/dog-api/documentation/
 common:
   - type: AgenticAccess
     url: agentic-access/dog-ceo-agentic-access.yml
