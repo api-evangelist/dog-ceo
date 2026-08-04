@@ -1,0 +1,20 @@
+{
+  "provider": "dog-ceo",
+  "sources": [
+    "dog-ceo-breed-api-openapi.yml",
+    "dog-ceo-breeds-api-openapi.yml",
+    "dog-ceo-random-api-openapi.yml",
+    "dog-ceo-sub-breed-api-openapi.yml"
+  ],
+  "outputs": [
+    "dog-ceo-breed-api-openapi.yml",
+    "dog-ceo-breeds-api-openapi.yml",
+    "dog-ceo-random-api-openapi.yml",
+    "dog-ceo-sub-breed-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
