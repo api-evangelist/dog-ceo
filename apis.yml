@@ -83,6 +83,8 @@ apis:
   - type: Documentation
     url: https://dog.ceo/dog-api/documentation/
 common:
+  - type: IssueTracker
+    url: https://github.com/ElliottLandsborough/dog-ceo-api/issues
   - type: AgenticAccess
     url: agentic-access/dog-ceo-agentic-access.yml
   - type: DomainSecurity
