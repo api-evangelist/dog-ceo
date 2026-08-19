@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dog CEO Breed Breeds API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Breeds",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all breeds",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dog.ceo/api/breeds/list/all"
+          },
+          "docs": "Returns a map of all dog breeds and their sub-breeds. The key is the breed name and the value is an array of sub-breed names (empty array if no sub-breeds exist).\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,106 @@
+{
+  "item": [
+    {
+      "id": "94154e86-1164-485e-9e66-72a0582a3baf",
+      "name": "Breeds",
+      "description": {
+        "content": "Operations for listing all available dog breeds",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5bb83037-7d1f-42b0-b535-2d6fbfdee0a4",
+          "name": "List all breeds",
+          "request": {
+            "name": "List all breeds",
+            "description": {
+              "content": "Returns a map of all dog breeds and their sub-breeds. The key is the breed name and the value is an array of sub-breed names (empty array if no sub-breeds exist).\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "breeds",
+                "list",
+                "all"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "04a80d48-0ce4-4068-b534-ec158b69695a",
+              "name": "Successful response with all breeds",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "breeds",
+                    "list",
+                    "all"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": {\n    \"hound\": [\n      \"afghan\",\n      \"basset\",\n      \"blood\",\n      \"english\"\n    ],\n    \"retriever\": [\n      \"golden\",\n      \"curly\"\n    ],\n    \"terrier\": []\n  },\n  \"status\": \"success\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dog.ceo/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "69e821bc-542f-4860-b1bb-6f66441bf883",
+    "name": "Dog CEO Breed Breeds API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Free REST API providing random dog images organized by breed and sub-breed from 120+ breeds. Backed by the Stanford Dogs Dataset and community-contributed photos. No authentication or API key required. All endpoints return JSON with image URLs served via CDN. Open-source under the MIT license.\n\n\nContact Support:\n Name: Dog CEO API",
+      "type": "text/plain"
+    }
+  }
+}

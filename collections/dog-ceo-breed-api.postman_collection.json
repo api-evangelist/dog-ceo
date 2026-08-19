@@ -1,0 +1,467 @@
+{
+  "item": [
+    {
+      "id": "27d644de-7392-4227-b4a1-5123e8e9d93f",
+      "name": "Breed",
+      "description": {
+        "content": "Operations for fetching images from a specific breed",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f45282f2-46d9-49b4-ba2a-0af881915cc5",
+          "name": "All images by breed",
+          "request": {
+            "name": "All images by breed",
+            "description": {
+              "content": "Returns an array of all image URLs for a specific breed.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "breed",
+                ":breed",
+                "images"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "breed",
+                  "description": "(Required) The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9da6da01-e76d-44cc-bcb6-a0e7cd0c0b27",
+              "name": "Successful response with all breed images",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "breed",
+                    ":breed",
+                    "images"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "breed",
+                      "description": "(Required) The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": [\n    \"https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg\",\n    \"https://images.dog.ceo/breeds/hound-afghan/n02088094_1007.jpg\"\n  ],\n  \"status\": \"success\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d4c5615a-c11d-4060-b23c-e85e67e5e640",
+              "name": "Breed not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "breed",
+                    ":breed",
+                    "images"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "breed",
+                      "description": "(Required) The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Breed not found (master breed does not exist)\",\n  \"status\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "22efc0ab-15c7-4913-a348-22cde5ad7cb4",
+          "name": "Random image from a breed",
+          "request": {
+            "name": "Random image from a breed",
+            "description": {
+              "content": "Returns a single random dog image from a specific breed.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "breed",
+                ":breed",
+                "images",
+                "random"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "breed",
+                  "description": "(Required) The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0d3e4551-6c2c-454f-9f13-489d723018e0",
+              "name": "Successful response with a random breed image URL",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "breed",
+                    ":breed",
+                    "images",
+                    "random"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "breed",
+                      "description": "(Required) The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg\",\n  \"status\": \"success\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7faeea65-fb00-436b-b79b-0e222201a410",
+              "name": "Breed not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "breed",
+                    ":breed",
+                    "images",
+                    "random"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "breed",
+                      "description": "(Required) The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Breed not found (master breed does not exist)\",\n  \"status\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a8473cc1-86d0-4a3f-ab6b-d928345a6db2",
+          "name": "Multiple random images from a breed",
+          "request": {
+            "name": "Multiple random images from a breed",
+            "description": {
+              "content": "Returns multiple random dog images from a specific breed. Maximum count is 50.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "breed",
+                ":breed",
+                "images",
+                "random",
+                ":count"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "breed",
+                  "description": "(Required) The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "count",
+                  "description": "(Required) Number of images to return (max 50)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c1c03112-5d2a-4417-9f1a-b15edabbe4d4",
+              "name": "Successful response with multiple random breed images",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "breed",
+                    ":breed",
+                    "images",
+                    "random",
+                    ":count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "breed",
+                      "description": "(Required) The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "count",
+                      "description": "(Required) Number of images to return (max 50)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": [\n    \"https://images.dog.ceo/breeds/retriever-chesapeake/n02099849_1068.jpg\",\n    \"https://images.dog.ceo/breeds/vizsla/n02100583_1214.jpg\"\n  ],\n  \"status\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d9e5e022-26cf-498c-84ab-95300ad6693d",
+              "name": "Breed not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "breed",
+                    ":breed",
+                    "images",
+                    "random",
+                    ":count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "breed",
+                      "description": "(Required) The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "count",
+                      "description": "(Required) Number of images to return (max 50)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Breed not found (master breed does not exist)\",\n  \"status\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dog.ceo/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "35c4077c-310e-4c7d-a8df-6a277ffee562",
+    "name": "Dog CEO Breed API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Free REST API providing random dog images organized by breed and sub-breed from 120+ breeds. Backed by the Stanford Dogs Dataset and community-contributed photos. No authentication or API key required. All endpoints return JSON with image URLs served via CDN. Open-source under the MIT license.\n\n\nContact Support:\n Name: Dog CEO API",
+      "type": "text/plain"
+    }
+  }
+}

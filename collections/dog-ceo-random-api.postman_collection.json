@@ -1,0 +1,198 @@
+{
+  "item": [
+    {
+      "id": "d07559da-ebac-4d1f-a21d-2342f91758bb",
+      "name": "Random",
+      "description": {
+        "content": "Operations for fetching random dog images across all breeds",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4470562c-730b-4e71-862a-8d4bf8fc8968",
+          "name": "Random image from all breeds",
+          "request": {
+            "name": "Random image from all breeds",
+            "description": {
+              "content": "Returns a single random dog image from any breed.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "breeds",
+                "image",
+                "random"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d34c19e1-1a97-419d-ab99-4c587028f131",
+              "name": "Successful response with a random image URL",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "breeds",
+                    "image",
+                    "random"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"https://images.dog.ceo/breeds/terrier-silky/n02097658_2882.jpg\",\n  \"status\": \"success\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a35a4e39-fec2-44b9-aab5-4b081d2e25e1",
+          "name": "Multiple random images from all breeds",
+          "request": {
+            "name": "Multiple random images from all breeds",
+            "description": {
+              "content": "Returns multiple random dog images from any breed. Maximum count is 50.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "breeds",
+                "image",
+                "random",
+                ":count"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "count",
+                  "description": "(Required) Number of images to return (max 50)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f1d1f6da-4025-4e93-8d13-e2afa55b9605",
+              "name": "Successful response with multiple random image URLs",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "breeds",
+                    "image",
+                    "random",
+                    ":count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "count",
+                      "description": "(Required) Number of images to return (max 50)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": [\n    \"https://images.dog.ceo/breeds/retriever-chesapeake/n02099849_1068.jpg\",\n    \"https://images.dog.ceo/breeds/vizsla/n02100583_1214.jpg\",\n    \"https://images.dog.ceo/breeds/waterdog-spanish/20180723_185544.jpg\"\n  ],\n  \"status\": \"success\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dog.ceo/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2e904143-052f-4519-8b5c-1eb34d5175fb",
+    "name": "Dog CEO Breed Random API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Free REST API providing random dog images organized by breed and sub-breed from 120+ breeds. Backed by the Stanford Dogs Dataset and community-contributed photos. No authentication or API key required. All endpoints return JSON with image URLs served via CDN. Open-source under the MIT license.\n\n\nContact Support:\n Name: Dog CEO API",
+      "type": "text/plain"
+    }
+  }
+}

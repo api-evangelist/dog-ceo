@@ -1,0 +1,118 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dog CEO Breed Sub-Breed API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Sub-Breed",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List sub-breeds of a breed",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dog.ceo/api/breed/:breed/list",
+            "params": [
+              {
+                "name": "breed",
+                "value": "",
+                "type": "path",
+                "description": "The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+              }
+            ]
+          },
+          "docs": "Returns an array of all sub-breeds for the specified breed."
+        },
+        {
+          "info": {
+            "name": "All images from a sub-breed",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dog.ceo/api/breed/:breed/:subBreed/images",
+            "params": [
+              {
+                "name": "breed",
+                "value": "",
+                "type": "path",
+                "description": "The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+              },
+              {
+                "name": "subBreed",
+                "value": "",
+                "type": "path",
+                "description": "The sub-breed name (lowercase). Use the /breed/{breed}/list endpoint to get valid sub-breed names for a given breed.\n"
+              }
+            ]
+          },
+          "docs": "Returns an array of all image URLs for a specific sub-breed."
+        },
+        {
+          "info": {
+            "name": "Random image from a sub-breed",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dog.ceo/api/breed/:breed/:subBreed/images/random",
+            "params": [
+              {
+                "name": "breed",
+                "value": "",
+                "type": "path",
+                "description": "The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+              },
+              {
+                "name": "subBreed",
+                "value": "",
+                "type": "path",
+                "description": "The sub-breed name (lowercase). Use the /breed/{breed}/list endpoint to get valid sub-breed names for a given breed.\n"
+              }
+            ]
+          },
+          "docs": "Returns a single random dog image from a specific sub-breed."
+        },
+        {
+          "info": {
+            "name": "Multiple random images from a sub-breed",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dog.ceo/api/breed/:breed/:subBreed/images/random/:count",
+            "params": [
+              {
+                "name": "breed",
+                "value": "",
+                "type": "path",
+                "description": "The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+              },
+              {
+                "name": "subBreed",
+                "value": "",
+                "type": "path",
+                "description": "The sub-breed name (lowercase). Use the /breed/{breed}/list endpoint to get valid sub-breed names for a given breed.\n"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "path",
+                "description": "Number of images to return (max 50)"
+              }
+            ]
+          },
+          "docs": "Returns multiple random dog images from a specific sub-breed. Maximum count is 50.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

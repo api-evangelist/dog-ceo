@@ -1,0 +1,81 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dog CEO Breed API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Breed",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "All images by breed",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dog.ceo/api/breed/:breed/images",
+            "params": [
+              {
+                "name": "breed",
+                "value": "",
+                "type": "path",
+                "description": "The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+              }
+            ]
+          },
+          "docs": "Returns an array of all image URLs for a specific breed."
+        },
+        {
+          "info": {
+            "name": "Random image from a breed",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dog.ceo/api/breed/:breed/images/random",
+            "params": [
+              {
+                "name": "breed",
+                "value": "",
+                "type": "path",
+                "description": "The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+              }
+            ]
+          },
+          "docs": "Returns a single random dog image from a specific breed."
+        },
+        {
+          "info": {
+            "name": "Multiple random images from a breed",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dog.ceo/api/breed/:breed/images/random/:count",
+            "params": [
+              {
+                "name": "breed",
+                "value": "",
+                "type": "path",
+                "description": "The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "path",
+                "description": "Number of images to return (max 50)"
+              }
+            ]
+          },
+          "docs": "Returns multiple random dog images from a specific breed. Maximum count is 50.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

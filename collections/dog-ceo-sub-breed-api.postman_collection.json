@@ -1,0 +1,674 @@
+{
+  "item": [
+    {
+      "id": "cd37842f-a86e-4e42-9e41-a76f270d25c6",
+      "name": "Sub-Breed",
+      "description": {
+        "content": "Operations for fetching images from a specific sub-breed",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ae141bc4-4be9-4768-af5e-206695f7b049",
+          "name": "List sub-breeds of a breed",
+          "request": {
+            "name": "List sub-breeds of a breed",
+            "description": {
+              "content": "Returns an array of all sub-breeds for the specified breed.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "breed",
+                ":breed",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "breed",
+                  "description": "(Required) The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "11ec2cc5-99c5-4a17-a6a8-3b9e6bc52b2a",
+              "name": "Successful response with sub-breed list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "breed",
+                    ":breed",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "breed",
+                      "description": "(Required) The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": [\n    \"afghan\",\n    \"basset\",\n    \"blood\",\n    \"english\",\n    \"ibizan\",\n    \"plott\",\n    \"walker\"\n  ],\n  \"status\": \"success\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "332e4657-d31f-46c2-8357-9eef4c4365d6",
+              "name": "Breed not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "breed",
+                    ":breed",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "breed",
+                      "description": "(Required) The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Breed not found (master breed does not exist)\",\n  \"status\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d087b730-e7de-4403-b3fd-89a048e6a86b",
+          "name": "All images from a sub-breed",
+          "request": {
+            "name": "All images from a sub-breed",
+            "description": {
+              "content": "Returns an array of all image URLs for a specific sub-breed.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "breed",
+                ":breed",
+                ":subBreed",
+                "images"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "breed",
+                  "description": "(Required) The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subBreed",
+                  "description": "(Required) The sub-breed name (lowercase). Use the /breed/{breed}/list endpoint to get valid sub-breed names for a given breed.\n"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "83c3be87-9b26-4af2-b184-fb038506c079",
+              "name": "Successful response with all sub-breed images",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "breed",
+                    ":breed",
+                    ":subBreed",
+                    "images"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "breed",
+                      "description": "(Required) The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subBreed",
+                      "description": "(Required) The sub-breed name (lowercase). Use the /breed/{breed}/list endpoint to get valid sub-breed names for a given breed.\n"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": [\n    \"https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg\",\n    \"https://images.dog.ceo/breeds/hound-afghan/n02088094_1007.jpg\"\n  ],\n  \"status\": \"success\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ad23d54b-1034-4c86-84dc-eb3cc8e49db2",
+              "name": "Breed or sub-breed not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "breed",
+                    ":breed",
+                    ":subBreed",
+                    "images"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "breed",
+                      "description": "(Required) The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subBreed",
+                      "description": "(Required) The sub-breed name (lowercase). Use the /breed/{breed}/list endpoint to get valid sub-breed names for a given breed.\n"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Breed not found (master breed does not exist)\",\n  \"status\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9d296420-de56-4d02-b8c9-1e36052623d2",
+          "name": "Random image from a sub-breed",
+          "request": {
+            "name": "Random image from a sub-breed",
+            "description": {
+              "content": "Returns a single random dog image from a specific sub-breed.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "breed",
+                ":breed",
+                ":subBreed",
+                "images",
+                "random"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "breed",
+                  "description": "(Required) The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subBreed",
+                  "description": "(Required) The sub-breed name (lowercase). Use the /breed/{breed}/list endpoint to get valid sub-breed names for a given breed.\n"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bcaa71d9-0a4b-459a-9e5d-23951fac205c",
+              "name": "Successful response with a random sub-breed image URL",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "breed",
+                    ":breed",
+                    ":subBreed",
+                    "images",
+                    "random"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "breed",
+                      "description": "(Required) The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subBreed",
+                      "description": "(Required) The sub-breed name (lowercase). Use the /breed/{breed}/list endpoint to get valid sub-breed names for a given breed.\n"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg\",\n  \"status\": \"success\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b6a805a5-3a4c-4319-854a-98f28edf3ae6",
+              "name": "Breed or sub-breed not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "breed",
+                    ":breed",
+                    ":subBreed",
+                    "images",
+                    "random"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "breed",
+                      "description": "(Required) The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subBreed",
+                      "description": "(Required) The sub-breed name (lowercase). Use the /breed/{breed}/list endpoint to get valid sub-breed names for a given breed.\n"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Breed not found (master breed does not exist)\",\n  \"status\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "abe41322-2d6f-4f2c-b32d-f8eb61fbec28",
+          "name": "Multiple random images from a sub-breed",
+          "request": {
+            "name": "Multiple random images from a sub-breed",
+            "description": {
+              "content": "Returns multiple random dog images from a specific sub-breed. Maximum count is 50.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "breed",
+                ":breed",
+                ":subBreed",
+                "images",
+                "random",
+                ":count"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "breed",
+                  "description": "(Required) The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subBreed",
+                  "description": "(Required) The sub-breed name (lowercase). Use the /breed/{breed}/list endpoint to get valid sub-breed names for a given breed.\n"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "count",
+                  "description": "(Required) Number of images to return (max 50)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4c530315-2aa4-4c0c-9ab0-e29795d4bf53",
+              "name": "Successful response with multiple random sub-breed images",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "breed",
+                    ":breed",
+                    ":subBreed",
+                    "images",
+                    "random",
+                    ":count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "breed",
+                      "description": "(Required) The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subBreed",
+                      "description": "(Required) The sub-breed name (lowercase). Use the /breed/{breed}/list endpoint to get valid sub-breed names for a given breed.\n"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "count",
+                      "description": "(Required) Number of images to return (max 50)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": [\n    \"https://images.dog.ceo/breeds/retriever-chesapeake/n02099849_1068.jpg\",\n    \"https://images.dog.ceo/breeds/vizsla/n02100583_1214.jpg\"\n  ],\n  \"status\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d0239c89-ce12-4138-a3c0-933d3e118419",
+              "name": "Breed or sub-breed not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "breed",
+                    ":breed",
+                    ":subBreed",
+                    "images",
+                    "random",
+                    ":count"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "breed",
+                      "description": "(Required) The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.\n"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subBreed",
+                      "description": "(Required) The sub-breed name (lowercase). Use the /breed/{breed}/list endpoint to get valid sub-breed names for a given breed.\n"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "count",
+                      "description": "(Required) Number of images to return (max 50)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Breed not found (master breed does not exist)\",\n  \"status\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dog.ceo/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d8656d22-7dc1-49ae-988c-79a30cfa0405",
+    "name": "Dog CEO Breed Sub-Breed API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Free REST API providing random dog images organized by breed and sub-breed from 120+ breeds. Backed by the Stanford Dogs Dataset and community-contributed photos. No authentication or API key required. All endpoints return JSON with image URLs served via CDN. Open-source under the MIT license.\n\n\nContact Support:\n Name: Dog CEO API",
+      "type": "text/plain"
+    }
+  }
+}

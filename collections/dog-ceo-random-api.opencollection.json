@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Dog CEO Breed Random API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Random",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Random image from all breeds",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dog.ceo/api/breeds/image/random"
+          },
+          "docs": "Returns a single random dog image from any breed."
+        },
+        {
+          "info": {
+            "name": "Multiple random images from all breeds",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dog.ceo/api/breeds/image/random/:count",
+            "params": [
+              {
+                "name": "count",
+                "value": "",
+                "type": "path",
+                "description": "Number of images to return (max 50)"
+              }
+            ]
+          },
+          "docs": "Returns multiple random dog images from any breed. Maximum count is 50.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
