@@ -27,6 +27,14 @@ specificationVersion: '0.23'
 type: Index
 tags:
   - Dogs
+  - Image
+  - Animals
+  - Open-Source
+  - Free API
+  - Machine-Learning
+  - Education
+tags_raw:
+  - Dogs
   - Images
   - Animals
   - Open Source
