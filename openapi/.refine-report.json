@@ -15,6 +15,12 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
+  "notes": [
+    "dog-ceo-breed-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "dog-ceo-breeds-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "dog-ceo-random-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "dog-ceo-sub-breed-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
   "skipped": []
 }
