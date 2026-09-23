@@ -1,9 +1,7 @@
 openapi: 3.2.0
 info:
-  title: Dog CEO Breed Breeds API
-  description: 'Free REST API providing random dog images organized by breed and sub-breed from 120+ breeds. Backed by the Stanford Dogs Dataset and community-contributed photos. No authentication or API key required. All endpoints return JSON with image URLs served via CDN. Open-source under the MIT license.
-
-    '
+  title: Dog CEO Breeds API
+  description: Free REST API providing random dog images organized by breed and sub-breed from 120+ breeds. Backed by the Stanford Dogs Dataset and community-contributed photos. No authentication or API key required. All endpoints return JSON with image URLs served via CDN. Open-source under the MIT license.
   version: 1.0.0
   contact:
     name: Dog CEO API
@@ -23,9 +21,7 @@ paths:
     get:
       operationId: listAllBreeds
       summary: List all breeds
-      description: 'Returns a map of all dog breeds and their sub-breeds. The key is the breed name and the value is an array of sub-breed names (empty array if no sub-breeds exist).
-
-        '
+      description: Returns a map of all dog breeds and their sub-breeds. The key is the breed name and the value is an array of sub-breed names (empty array if no sub-breeds exist).
       tags:
       - Breeds
       responses:

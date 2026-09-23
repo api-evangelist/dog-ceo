@@ -1,10 +1,7 @@
 {
   "provider": "dog-ceo",
   "sources": [
-    "dog-ceo-breed-api-openapi.yml",
-    "dog-ceo-breeds-api-openapi.yml",
-    "dog-ceo-random-api-openapi.yml",
-    "dog-ceo-sub-breed-api-openapi.yml"
+    "_original/dog-ceo-openapi.yml"
   ],
   "outputs": [
     "dog-ceo-breed-api-openapi.yml",
@@ -16,11 +13,14 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "dog-ceo-breed-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "dog-ceo-breeds-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "dog-ceo-random-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "dog-ceo-sub-breed-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "dog-ceo-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "dog-ceo-breed-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "dog-ceo-breeds-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "dog-ceo-random-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "dog-ceo-sub-breed-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

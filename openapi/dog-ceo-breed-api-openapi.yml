@@ -1,9 +1,7 @@
 openapi: 3.2.0
 info:
   title: Dog CEO Breed API
-  description: 'Free REST API providing random dog images organized by breed and sub-breed from 120+ breeds. Backed by the Stanford Dogs Dataset and community-contributed photos. No authentication or API key required. All endpoints return JSON with image URLs served via CDN. Open-source under the MIT license.
-
-    '
+  description: Free REST API providing random dog images organized by breed and sub-breed from 120+ breeds. Backed by the Stanford Dogs Dataset and community-contributed photos. No authentication or API key required. All endpoints return JSON with image URLs served via CDN. Open-source under the MIT license.
   version: 1.0.0
   contact:
     name: Dog CEO API
@@ -75,9 +73,7 @@ paths:
     get:
       operationId: getBreedRandomImages
       summary: Multiple random images from a breed
-      description: 'Returns multiple random dog images from a specific breed. Maximum count is 50.
-
-        '
+      description: Returns multiple random dog images from a specific breed. Maximum count is 50.
       tags:
       - Breed
       parameters:
@@ -106,7 +102,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
   schemas:
-    ErrorResponse:
+    SingleImageResponse:
       type: object
       required:
       - message
@@ -114,13 +110,11 @@ components:
       properties:
         message:
           type: string
-          description: Error message describing what went wrong
-          example: Breed not found (master breed does not exist)
+          format: uri
+          description: URL of the dog image
+          example: https://images.dog.ceo/breeds/terrier-silky/n02097658_2882.jpg
         status:
-          type: string
-          enum:
-          - error
-          example: error
+          $ref: '#/components/schemas/ApiStatus'
     MultipleImagesResponse:
       type: object
       required:
@@ -138,7 +132,7 @@ components:
           - https://images.dog.ceo/breeds/vizsla/n02100583_1214.jpg
         status:
           $ref: '#/components/schemas/ApiStatus'
-    SingleImageResponse:
+    ErrorResponse:
       type: object
       required:
       - message
@@ -146,11 +140,13 @@ components:
       properties:
         message:
           type: string
-          format: uri
-          description: URL of the dog image
-          example: https://images.dog.ceo/breeds/terrier-silky/n02097658_2882.jpg
+          description: Error message describing what went wrong
+          example: Breed not found (master breed does not exist)
         status:
-          $ref: '#/components/schemas/ApiStatus'
+          type: string
+          enum:
+          - error
+          example: error
     ApiStatus:
       type: string
       enum:
