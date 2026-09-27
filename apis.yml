@@ -8,17 +8,21 @@ description: >
   is required. All endpoints return JSON with image URLs served via Vultr CDN.
   Open-source under the MIT license and community-funded via voluntary donations.
 deliveryModel:
-  model: unknown
+  model: saas
+  license_evidence:
+    not_product:
+    - elliottlandsborough/dog-ceo-api
+    - jigsawpieces/dog-api-images
   open_source: unknown
   commercial: true
   callable_host: true
-  label: Delivery model not determined — needs a product licence on record
+  label: Hosted service · you call their endpoint
   confidence: low
   source:
   - openapi
   - pricing
-  - repository-unlicensed
-  generated: '2026-08-28'
+  - repository-not-product
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: free
@@ -42,9 +46,9 @@ tags:
   - Dogs
   - Image
   - Animals
-  - Open-Source
+  - Open Source
   - Free API
-  - Machine-Learning
+  - Machine Learning
   - Education
 tags_raw:
   - Dogs
@@ -54,6 +58,8 @@ tags_raw:
   - Free API
   - Machine Learning
   - Education
+  - Open-Source
+  - Machine-Learning
 apis:
 - aid: dog-ceo:dog-ceo-breed-api
   name: Dog CEO Breed API

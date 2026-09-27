@@ -45,6 +45,12 @@ paths:
                 status: success
 components:
   schemas:
+    ApiStatus:
+      type: string
+      enum:
+      - success
+      - error
+      description: Indicates whether the API call was successful or encountered an error
     BreedsListResponse:
       type: object
       required:
@@ -69,9 +75,3 @@ components:
             terrier: []
         status:
           $ref: '#/components/schemas/ApiStatus'
-    ApiStatus:
-      type: string
-      enum:
-      - success
-      - error
-      description: Indicates whether the API call was successful or encountered an error

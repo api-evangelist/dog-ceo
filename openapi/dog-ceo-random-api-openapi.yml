@@ -66,6 +66,12 @@ paths:
                 status: success
 components:
   schemas:
+    ApiStatus:
+      type: string
+      enum:
+      - success
+      - error
+      description: Indicates whether the API call was successful or encountered an error
     SingleImageResponse:
       type: object
       required:
@@ -96,9 +102,3 @@ components:
           - https://images.dog.ceo/breeds/vizsla/n02100583_1214.jpg
         status:
           $ref: '#/components/schemas/ApiStatus'
-    ApiStatus:
-      type: string
-      enum:
-      - success
-      - error
-      description: Indicates whether the API call was successful or encountered an error

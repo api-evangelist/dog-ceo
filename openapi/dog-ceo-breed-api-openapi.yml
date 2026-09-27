@@ -102,19 +102,12 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
   schemas:
-    SingleImageResponse:
-      type: object
-      required:
-      - message
-      - status
-      properties:
-        message:
-          type: string
-          format: uri
-          description: URL of the dog image
-          example: https://images.dog.ceo/breeds/terrier-silky/n02097658_2882.jpg
-        status:
-          $ref: '#/components/schemas/ApiStatus'
+    ApiStatus:
+      type: string
+      enum:
+      - success
+      - error
+      description: Indicates whether the API call was successful or encountered an error
     MultipleImagesResponse:
       type: object
       required:
@@ -147,12 +140,19 @@ components:
           enum:
           - error
           example: error
-    ApiStatus:
-      type: string
-      enum:
-      - success
-      - error
-      description: Indicates whether the API call was successful or encountered an error
+    SingleImageResponse:
+      type: object
+      required:
+      - message
+      - status
+      properties:
+        message:
+          type: string
+          format: uri
+          description: URL of the dog image
+          example: https://images.dog.ceo/breeds/terrier-silky/n02097658_2882.jpg
+        status:
+          $ref: '#/components/schemas/ApiStatus'
   parameters:
     breed:
       name: breed
