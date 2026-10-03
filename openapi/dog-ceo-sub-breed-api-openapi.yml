@@ -136,66 +136,18 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
-  parameters:
-    subBreed:
-      name: subBreed
-      in: path
-      required: true
-      description: 'The sub-breed name (lowercase). Use the /breed/{breed}/list endpoint to get valid sub-breed names for a given breed.
-
-        '
-      schema:
-        type: string
-        example: afghan
-    breed:
-      name: breed
-      in: path
-      required: true
-      description: 'The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.
-
-        '
-      schema:
-        type: string
-        example: hound
   schemas:
-    ApiStatus:
-      type: string
-      enum:
-      - success
-      - error
-      description: Indicates whether the API call was successful or encountered an error
-    SubBreedsListResponse:
+    SingleImageResponse:
       type: object
       required:
       - message
       - status
       properties:
         message:
-          type: array
-          items:
-            type: string
-          description: Array of sub-breed names for the requested breed
-          example:
-          - afghan
-          - basset
-          - blood
-        status:
-          $ref: '#/components/schemas/ApiStatus'
-    MultipleImagesResponse:
-      type: object
-      required:
-      - message
-      - status
-      properties:
-        message:
-          type: array
-          items:
-            type: string
-            format: uri
-          description: Array of dog image URLs
-          example:
-          - https://images.dog.ceo/breeds/retriever-chesapeake/n02099849_1068.jpg
-          - https://images.dog.ceo/breeds/vizsla/n02100583_1214.jpg
+          type: string
+          format: uri
+          description: URL of the dog image
+          example: https://images.dog.ceo/breeds/terrier-silky/n02097658_2882.jpg
         status:
           $ref: '#/components/schemas/ApiStatus'
     ErrorResponse:
@@ -213,16 +165,64 @@ components:
           enum:
           - error
           example: error
-    SingleImageResponse:
+    ApiStatus:
+      type: string
+      enum:
+      - success
+      - error
+      description: Indicates whether the API call was successful or encountered an error
+    MultipleImagesResponse:
       type: object
       required:
       - message
       - status
       properties:
         message:
-          type: string
-          format: uri
-          description: URL of the dog image
-          example: https://images.dog.ceo/breeds/terrier-silky/n02097658_2882.jpg
+          type: array
+          items:
+            type: string
+            format: uri
+          description: Array of dog image URLs
+          example:
+          - https://images.dog.ceo/breeds/retriever-chesapeake/n02099849_1068.jpg
+          - https://images.dog.ceo/breeds/vizsla/n02100583_1214.jpg
         status:
           $ref: '#/components/schemas/ApiStatus'
+    SubBreedsListResponse:
+      type: object
+      required:
+      - message
+      - status
+      properties:
+        message:
+          type: array
+          items:
+            type: string
+          description: Array of sub-breed names for the requested breed
+          example:
+          - afghan
+          - basset
+          - blood
+        status:
+          $ref: '#/components/schemas/ApiStatus'
+  parameters:
+    breed:
+      name: breed
+      in: path
+      required: true
+      description: 'The breed name (lowercase). Use the /breeds/list/all endpoint to get all valid breed names.
+
+        '
+      schema:
+        type: string
+        example: hound
+    subBreed:
+      name: subBreed
+      in: path
+      required: true
+      description: 'The sub-breed name (lowercase). Use the /breed/{breed}/list endpoint to get valid sub-breed names for a given breed.
+
+        '
+      schema:
+        type: string
+        example: afghan

@@ -102,6 +102,34 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
   schemas:
+    SingleImageResponse:
+      type: object
+      required:
+      - message
+      - status
+      properties:
+        message:
+          type: string
+          format: uri
+          description: URL of the dog image
+          example: https://images.dog.ceo/breeds/terrier-silky/n02097658_2882.jpg
+        status:
+          $ref: '#/components/schemas/ApiStatus'
+    ErrorResponse:
+      type: object
+      required:
+      - message
+      - status
+      properties:
+        message:
+          type: string
+          description: Error message describing what went wrong
+          example: Breed not found (master breed does not exist)
+        status:
+          type: string
+          enum:
+          - error
+          example: error
     ApiStatus:
       type: string
       enum:
@@ -123,34 +151,6 @@ components:
           example:
           - https://images.dog.ceo/breeds/retriever-chesapeake/n02099849_1068.jpg
           - https://images.dog.ceo/breeds/vizsla/n02100583_1214.jpg
-        status:
-          $ref: '#/components/schemas/ApiStatus'
-    ErrorResponse:
-      type: object
-      required:
-      - message
-      - status
-      properties:
-        message:
-          type: string
-          description: Error message describing what went wrong
-          example: Breed not found (master breed does not exist)
-        status:
-          type: string
-          enum:
-          - error
-          example: error
-    SingleImageResponse:
-      type: object
-      required:
-      - message
-      - status
-      properties:
-        message:
-          type: string
-          format: uri
-          description: URL of the dog image
-          example: https://images.dog.ceo/breeds/terrier-silky/n02097658_2882.jpg
         status:
           $ref: '#/components/schemas/ApiStatus'
   parameters:
