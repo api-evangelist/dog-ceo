@@ -137,19 +137,6 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
   schemas:
-    SingleImageResponse:
-      type: object
-      required:
-      - message
-      - status
-      properties:
-        message:
-          type: string
-          format: uri
-          description: URL of the dog image
-          example: https://images.dog.ceo/breeds/terrier-silky/n02097658_2882.jpg
-        status:
-          $ref: '#/components/schemas/ApiStatus'
     ErrorResponse:
       type: object
       required:
@@ -165,12 +152,6 @@ components:
           enum:
           - error
           example: error
-    ApiStatus:
-      type: string
-      enum:
-      - success
-      - error
-      description: Indicates whether the API call was successful or encountered an error
     MultipleImagesResponse:
       type: object
       required:
@@ -186,6 +167,19 @@ components:
           example:
           - https://images.dog.ceo/breeds/retriever-chesapeake/n02099849_1068.jpg
           - https://images.dog.ceo/breeds/vizsla/n02100583_1214.jpg
+        status:
+          $ref: '#/components/schemas/ApiStatus'
+    SingleImageResponse:
+      type: object
+      required:
+      - message
+      - status
+      properties:
+        message:
+          type: string
+          format: uri
+          description: URL of the dog image
+          example: https://images.dog.ceo/breeds/terrier-silky/n02097658_2882.jpg
         status:
           $ref: '#/components/schemas/ApiStatus'
     SubBreedsListResponse:
@@ -205,6 +199,12 @@ components:
           - blood
         status:
           $ref: '#/components/schemas/ApiStatus'
+    ApiStatus:
+      type: string
+      enum:
+      - success
+      - error
+      description: Indicates whether the API call was successful or encountered an error
   parameters:
     breed:
       name: breed
