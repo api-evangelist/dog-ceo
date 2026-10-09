@@ -1,3 +1,7 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (undated — the file carries no date and git cannot supply one), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
 name: Dog CEO Plans and Pricing
 description: Dog CEO API is a completely free, open-source service with no paid tiers or API keys required.
 url: https://dog.ceo/dog-api/
@@ -27,3 +31,18 @@ notes: >
   Dog CEO API is a free, open-source REST API with no commercial pricing tiers.
   Hosting is funded by voluntary donations from the community. The project is
   maintained on GitHub under the MIT license.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  units:
+  - period
+  plans:
+  - name: Free
+    access: other
+    model: free
+    model_how: derived
+    units:
+    - period
+    periods: []
